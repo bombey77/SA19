@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SA19</string>
+    <string name="action_settings">Settings</string>
+    <string name="btn_Plus">+</string>
+    <string name="btn_Minus">-</string>
+    <string name="btn_Devide">/</string>
+    <string name="btn_Multiplay">*</string>
+</resources>
