@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -88,13 +89,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         float num2 = 0;
         float result = 0;
 
-        num1 = Float.parseFloat(etFirst.getText().toString());
-        num2 = Float.parseFloat(etSecond.getText().toString());
-
-        if(TextUtils.isEmpty(etFirst.getText().toString())
-                || TextUtils.isEmpty(etSecond.getText().toString())) {
+        if(TextUtils.isEmpty(etFirst.getText().toString()) || TextUtils.isEmpty((etSecond.getText().toString()))) {
+            etFirst.setError("Firs field is empty!");
+            etSecond.setError("Firs field is empty!");
+            Toast.makeText(MainActivity.this, "Bouth fields is empty", Toast.LENGTH_LONG).show();
             return;
         }
+        if(TextUtils.isEmpty(etFirst.getText().toString())) {
+            etFirst.setError("Firs field is empty!");
+            Toast.makeText(MainActivity.this, "First fiels is empty", Toast.LENGTH_LONG).show();
+            return;
+        }if(TextUtils.isEmpty((etSecond.getText().toString()))) {
+            etSecond.setError("Second field is empty!");
+            Toast.makeText(MainActivity.this, "Second fiels is empty", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        num1 = Float.parseFloat(etFirst.getText().toString());
+        num2 = Float.parseFloat(etSecond.getText().toString());
 
 
         switch (v.getId()) {
